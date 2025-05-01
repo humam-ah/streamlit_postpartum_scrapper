@@ -126,7 +126,7 @@ if st.button("Mulai Scraping & Visualisasi"):
 
         # Simpan ke MongoDB Atlas
         try:
-            client = MongoClient("mongodb+srv://asihraa:asih123@cluster0.mirejnh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+            client = MongoClient("urmongoclienturl")
             db = client["postpartum"]
             collection = db["articles"]
             collection.insert_many(df.to_dict("records"))
