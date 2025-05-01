@@ -121,6 +121,8 @@ if st.button("Mulai Scraping & Visualisasi"):
         df = pd.DataFrame(data)
         df["published_date"] = pd.to_datetime(df["published_date"])
         df["month_year"] = df["published_date"].dt.to_period("M").astype(str)
+        df = df[df["published_date"].notna()]
+
 
         # Simpan ke MongoDB Atlas
         try:
